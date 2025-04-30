@@ -20,4 +20,7 @@ export class Transaction extends BaseEntity {
 
   @Column('jsonb')
   metadata: Record<string, string>;
+
+  @Column({ name: 'processed_at', type: 'timestamptz', nullable: true })
+  processedAt: Date;
 }
