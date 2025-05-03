@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@dotfile-tms/database": ["libs/backend/shared/database/src/index.ts"],
+      "@dotfile-tms/dto": ["libs/backend/shared/dto/src/index.ts"],
       "@dotfile-tms/migrations": ["libs/backend/shared/migrations/src/index.ts"]
     }
   },

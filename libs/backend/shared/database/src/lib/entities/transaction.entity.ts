@@ -22,5 +22,5 @@ export class Transaction extends BaseEntity {
   metadata: Record<string, string>;
 
   @Column({ name: 'processed_at', type: 'timestamptz', nullable: true })
-  processedAt: Date;
+  processedAt?: Date;
 }

@@ -2,8 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import type { Repository } from 'typeorm';
 import { Transaction } from '@dotfile-tms/database';
-import { CreateTransactionDto } from './dto/create-transaction.dto';
-import { TransactionDto } from './dto/transaction.dto';
+import { CreateTransactionDto, TransactionDto } from '@dotfile-tms/dto';
 import { plainToInstance } from 'class-transformer';
 
 @Injectable()

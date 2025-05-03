@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { CreateTransactionDto } from "../transactions/dto/create-transaction.dto";
-import { TransactionDto } from "../transactions/dto/transaction.dto";
+import { CreateTransactionDto, TransactionDto } from "@dotfile-tms/dto";
 import { instanceToPlain, plainToInstance } from "class-transformer";
 
 @Injectable()

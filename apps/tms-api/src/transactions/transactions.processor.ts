@@ -1,7 +1,7 @@
 import { Processor, WorkerHost } from '@nestjs/bullmq';
 import { Job } from 'bullmq';
 import { TransactionsService } from './transactions.service';
-import { CreateTransactionDto } from './dto/create-transaction.dto';
+import { CreateTransactionDto } from '@dotfile-tms/dto';
 import { RuleEngineService } from '../rule-engine/rule-engine.service';
 
 @Processor('transaction-ingest')
