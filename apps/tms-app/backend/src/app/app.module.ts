@@ -4,13 +4,19 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { RestClientService } from '../rest-client/rest-client.service';
 import { TransactionsResolver } from '../transaction/transaction.resolver';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 
 @Module({
   imports: [
-    HttpModule.register({
-      baseURL: process.env.DOTFILE_API_URL || 'http://localhost:3000/api',
-      timeout: 5000,
+    ConfigModule.forRoot(),
+    HttpModule.registerAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) => ({
+        baseURL: configService.get('DOTFILE_API_URL'),
+        timeout: 5000,
+      }),
+      inject: [ConfigService],
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,

@@ -6,24 +6,24 @@ import { Field, ID, ObjectType } from '@nestjs/graphql';
 @ObjectType()
 export class TransactionDto extends CreateTransactionDto {
   // GraphQL decorators
-  @Field(() => ID) 
+  @Field(() => ID)
   // REST decorators
   @IsUUID()
-  id: string;
+  id!: string;
 
   // GraphQL decorators
   @Field(() => Date)
   // REST decorators
   @Type(() => Date)
   @IsDate()
-  createdAt: Date;
+  createdAt!: Date;
 
   // GraphQL decorators
   @Field(() => Date)
   // REST decorators
   @Type(() => Date)
   @IsDate()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   // GraphQL decorators
   @Field(() => Date, { nullable: true })

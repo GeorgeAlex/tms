@@ -41,7 +41,7 @@ const Navbar = () => {
       >
         <Box>
           <Text fontWeight="bold" fontSize="lg">
-            Logo
+            Best TMS
           </Text>
         </Box>
         <Box display={{ base: 'flex', md: 'none' }}>

@@ -16,5 +16,19 @@ npm install
 
 ```bash
 nx serve tms-api # start & serve API
-nx serve tms-app # start & serve App
+nx serve tms-app-backend # start & serve App Backend
 ```
+
+Before running the frontend app make sure to run
+```bash
+nx codegen tms-app-frontend
+```
+
+Followed by the command to start the forntend app
+```bash
+nx serve tms-app-frontend
+```
+
+## Docs
+
+Swagger docs for the TMS API are available under the `/docs` route once the service is runnnig.
