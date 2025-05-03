@@ -1,0 +1,63 @@
+{
+  "name": "tms-app-frontend",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tms-app/frontend/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/apps/tms-app/frontend",
+        "index": "apps/tms-app/frontend/src/index.html",
+        "main": "apps/tms-app/frontend/src/main.tsx",
+        "tsConfig": "apps/tms-app/frontend/tsconfig.app.json",
+        "rspackConfig": "apps/tms-app/frontend/rspack.config.js",
+        "assets": [
+          "apps/tms-app/frontend/src/favicon.ico",
+          "apps/tms-app/frontend/src/assets"
+        ]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "tms-app-frontend:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "tms-app-frontend:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "tms-app-frontend:build",
+        "spa": true
+      }
+    },
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "graphql-codegen --config codegen.yml",
+        "cwd": "apps/tms-app/frontend"
+      }
+    }
+  }
+}

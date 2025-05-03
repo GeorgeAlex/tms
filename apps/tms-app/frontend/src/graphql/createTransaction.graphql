@@ -1,0 +1,5 @@
+mutation CreateTransaction($input: CreateTransactionDto!) {
+  createTransaction(input: $input) {
+    message
+  }
+}

@@ -1,0 +1,11 @@
+query GetTransactions {
+  transactions {
+    id
+    sourceAccount
+    targetAccount
+    amount
+    currency
+    createdAt
+    processedAt
+  }
+}
