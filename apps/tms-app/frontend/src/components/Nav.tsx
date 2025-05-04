@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Box,
   Flex,
@@ -9,6 +8,7 @@ import {
   CollapsibleRoot,
   CollapsibleContent,
 } from '@chakra-ui/react';
+import React from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 

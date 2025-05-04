@@ -1,7 +1,7 @@
+import { ApiKey } from '@dotfile-tms/database';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ApiKey } from '@dotfile-tms/database';
 
 @Injectable()
 export class ApiKeyService {

@@ -1,7 +1,9 @@
-import { IsUUID, IsDate } from 'class-validator';
-import { Type } from 'class-transformer';
-import { CreateTransactionDto } from './create-transaction.dto';
 import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Type } from 'class-transformer';
+import { IsUUID, IsDate } from 'class-validator';
+
+import { CreateTransactionDto } from './create-transaction.dto';
+
 
 @ObjectType()
 export class TransactionDto extends CreateTransactionDto {

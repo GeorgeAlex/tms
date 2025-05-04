@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
-import { TransactionsService } from './transactions.service';
-import { TransactionsController } from './transactions.controller';
 import { Transaction } from '@dotfile-tms/database';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { BullModule } from '@nestjs/bullmq';
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { TransactionsController } from './transactions.controller';
 import { TransactionsProcessor } from './transactions.processor';
+import { TransactionsService } from './transactions.service';
 import { RuleEngineModule } from '../rule-engine/rule-engine.module';
 
 @Module({

@@ -1,10 +1,10 @@
+import { BullModule } from '@nestjs/bullmq';
 import { Module } from '@nestjs/common';
 
-import { ApiDatabaseModule } from './database/database.module';
-import { TransactionsModule } from './transactions/transactions.module';
-import { BullModule } from '@nestjs/bullmq';
 import { ApiKeyModule } from './api-key/api-key.module';
+import { ApiDatabaseModule } from './database/database.module';
 import { ApiKeyGuard } from './guards/api-key.guard';
+import { TransactionsModule } from './transactions/transactions.module';
 
 @Module({
   imports: [

@@ -1,10 +1,12 @@
-import { Module } from '@nestjs/common';
-import { HttpModule } from '@nestjs/axios';
-import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { HttpModule } from '@nestjs/axios';
+import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { GraphQLModule } from '@nestjs/graphql';
+
 import { RestClientService } from '../rest-client/rest-client.service';
 import { TransactionsResolver } from '../transaction/transaction.resolver';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+
 
 
 @Module({

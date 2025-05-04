@@ -2,11 +2,11 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 // Maybe split Database & DataModel - E-23
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { DataSourceOptions } from 'typeorm';
 
 import { databaseConfig } from './config/database.config';
 import { getOrmConfig, GetOrmConfigParam } from './config/ormconfig';
 import { EntitiesModule } from './entities/entities.module';
-import { DataSourceOptions } from 'typeorm';
 
 @Module({})
 export class DatabaseModule {

@@ -1,8 +1,10 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
+
 import App from './app/app';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
 
 const apolloClient = new ApolloClient({
   uri: process.env.BACKEND_SERVICE_URL || 'http://localhost:3001/graphql',

@@ -1,6 +1,7 @@
+import { ApiKey } from '@dotfile-tms/database';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ApiKey } from '@dotfile-tms/database';
+
 import { ApiKeyService } from './api-key.service';
 
 @Module({

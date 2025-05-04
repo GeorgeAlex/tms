@@ -1,4 +1,3 @@
-import React, { useState, useMemo } from 'react';
 import {
   Table,
   Spinner,
@@ -11,6 +10,7 @@ import {
   Box,
 } from '@chakra-ui/react';
 import { format } from 'currency-formatter';
+import React, { useState, useMemo } from 'react';
 import { FiArrowUp, FiArrowDown } from 'react-icons/fi';
 
 import { useGetTransactionsQuery } from '../graphql/generated/graphql';

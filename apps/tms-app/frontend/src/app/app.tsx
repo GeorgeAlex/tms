@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import TransactionsTable from '../components/TransactionsTable';
-import Nav from '../components/Nav';
+
 import CreateTransactionForm from '../components/CreateTransactionForm';
+import Nav from '../components/Nav';
+import TransactionsTable from '../components/TransactionsTable';
 
 function AppRoutes() {
   return (
