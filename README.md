@@ -32,3 +32,15 @@ nx serve tms-app-frontend
 ## Docs
 
 Swagger docs for the TMS API are available under the `/docs` route once the service is runnnig.
+
+## Testing
+
+Run the unit tests across the codebase using the command
+```bash
+nx test <app> e.g. nx test tms-api
+```
+
+To run the e2e tests first run the tms-api app then
+```bash
+nx e2e tms-api-e2e
+```
