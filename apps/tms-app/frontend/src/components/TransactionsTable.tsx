@@ -8,6 +8,7 @@ import {
   HStack,
   Button,
   Box,
+  Link,
 } from '@chakra-ui/react';
 import { format } from 'currency-formatter';
 import React, { useState, useMemo } from 'react';
@@ -87,6 +88,30 @@ const TransactionsTable: React.FC = () => {
         </Alert.Root>
       </Flex>
     );
+
+  if (!filteredAndSortedTransactions.length) {
+    return (
+      <Flex
+        maxW="1200px"
+        mx="auto"
+        mt={16}
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
+        gap={4}
+      >
+        <Text fontWeight="bold" fontSize="lg">
+          Your transactions
+        </Text>
+        <Text>
+          You have no data. Create transactions via the API or{' '}
+          <Link href="/create-transaction" color="blue.500">
+            create a new transaction manually
+          </Link>
+        </Text>
+      </Flex>
+    );
+  }
 
   const SortButton = ({ field }: { field: SortField }) => (
     <Button size="sm" variant="plain" p={0} colorPalette="gray" onClick={() => handleSort(field)}>
